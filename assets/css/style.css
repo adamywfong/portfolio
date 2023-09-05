@@ -1,0 +1,105 @@
+/* color scheme sourced from http://khroma.co/generator/ */
+:root {
+    --french-pass: #b7f5fc;
+    --jade:#01b45d;
+    --mauve:#efcafe;
+    --amethyst: #a457ca;
+}
+
+html {
+    /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
+    font-size: 62.5%;
+}
+
+body {
+    /* Sans Serif font stack is implemented to help select the best font for each type of computer operating system */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     /* set body font size to 16px  */
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--amethyst);
+    background-color: var(--french-pass);
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.625rem;
+  color: var(--heliotrope);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 3.5rem;
+  }
+  
+  h3 {
+    font-size: 3rem;
+  }
+  
+  h4 {
+    font-size: 2.5rem;
+  }
+  
+  h5 {
+    font-size: 2rem;
+  }
+  
+  h6 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+
+  header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--mauve);
+    color: var(--jade);
+  }
+
+  header h1{
+    padding: 1rem 1.2rem;
+    font-size: 4.5rem;
+  }
+
+  nav {
+    display: flex;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+    align-items: center;
+  }
+
+  nav a {
+    padding: 14px 20px;
+    text-align: center;
+  }
+  
+  nav a:hover {
+    color: #fff;
+  }
+
+  footer {
+    margin: 1.5rem;
+    text-align: center;
+  }
