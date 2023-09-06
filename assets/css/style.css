@@ -19,8 +19,6 @@ body {
     line-height: 1.5;
     color: var(--amethyst);
     background-color: var(--french-pass);
-    display: flex;
-    flex-direction: column;
 }
 
 h1,
@@ -30,40 +28,41 @@ h4,
 h5,
 h6 {
   margin-bottom: 0.625rem;
-  color: var(--heliotrope);
   font-weight: 700;
   line-height: 1.1;
 }
-
 h1 {
-    font-size: 3rem;
-  }
-  
-  h2 {
+    font-size: 4rem;
+}
+h2 {
     font-size: 3.5rem;
-  }
-  
-  h3 {
+}
+h3 {
     font-size: 3rem;
-  }
-  
-  h4 {
+}
+h4 {
     font-size: 2.5rem;
-  }
-  
-  h5 {
+}
+h5 {
     font-size: 2rem;
-  }
-  
-  h6 {
+}
+h6 {
     font-size: 1.5rem;
-  }
-  
-  p {
+}
+p {
     margin-bottom: 1rem;
-  }
+}
 
-  header {
+a {
+    text-decoration: none;
+    color: var(--jade);
+}
+
+a:hover {
+    color: #fff;
+}
+
+header {
     width: 100%;
     margin: 0 auto;
     padding: 2.5rem;
@@ -71,35 +70,116 @@ h1 {
     display: flex;
     justify-content: space-between;
     background-color: var(--mauve);
-    color: var(--jade);
-  }
+}
 
-  header h1{
+header h1{
     padding: 1rem 1.2rem;
     font-size: 4.5rem;
-  }
+}
 
-  nav {
+nav {
     display: flex;
-  }
+}
   
-  nav ul {
+nav ul {
     display: flex;
     justify-content: space-between;
     min-width: 300px;
     align-items: center;
-  }
+}
 
-  nav a {
+nav a {
     padding: 14px 20px;
     text-align: center;
-  }
-  
-  nav a:hover {
-    color: #fff;
-  }
+}
 
-  footer {
-    margin: 1.5rem;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+footer {
+    width: 100%;
     text-align: center;
-  }
+    background-color: var(--mauve);
+}
+
+.project-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5rem;
+    transition: flex-basis 500ms linear;
+    margin:-1.5rem;
+    margin-bottom: 1.5rem;   
+}
+
+/* make each code card a flexbox column to align and justify content within it */
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 20rem;
+    color: var(--jade);
+    background-color: var(--mauve);
+    padding: 10 rem;
+    /* Figure outline */
+    outline: 1px solid var(--amethyst);
+    outline-offset: -1px;
+    transition: all 0.5s ease-in-out;
+    position:relative;
+    
+}
+
+.first {
+    flex:2 1 40rem;
+}
+
+.card::after{
+    content: "";
+    display: block;
+    padding:50%;
+}
+
+
+
+.card h3 {
+    position: absolute;
+    bottom: -7px;
+    left:0;
+    width:95%;
+    padding-left: 16px;
+    padding-bottom: 8px;
+    z-index: 1;
+    background-color: var(--amethyst);
+
+}
+
+.card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+}
+
+.card:hover img {
+    opacity: 1;
+}
+
+@media screen and (max-width: 992px) {
+    /* on tablets, set columns to only be 50% of the width and not grow */
+    .project-cards {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+}
+  
+/* media query for phone screens */
+@media screen and (max-width: 768px) {
+    .project-cards {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+}

@@ -14,9 +14,9 @@
         <h1>Adam Fong</h1>
         <nav>
             <ul>
-                <li><a src="#about-me">About me</a></li>
-                <li><a src="work">Work</a></li>
-                <li><a src="contact-info">Contact Me</a></li>
+                <li><a href="#about-me">About me</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact-info">Contact Me</a></li>
             </ul>
         </nav>
     </header>
@@ -24,32 +24,47 @@
     <main>
         <section id="about-me">
             <h2>About Me</h2>
+            <img
+                src="./assets/images/profile-placeholder.jpg"
+                alt="Placeholder image with text 200 width and 200 height "
+            />
+            <p>Here is some information about me</p>
         </section>
-        <section id="work">
+        <section class="work" id="work">
             <h2>My Projects</h2>
-            <article class="card">
-                <h2>horiseon refactor</h2>
-            </article>
-            <article class="card">
-                <h2>placeholder 1</h2>
-            </article>
-            <article class="card">
-                <h2>placeholder 2</h2>
-            </article>
-            <article class="card">
-                <h2>placeholder 3</h2>
-            </article>
-            <article class="card">
-                <h2>placeholder 4</h2>
+            <article class="project-cards">    
+                <figure class="first card">
+                    <h3> <a href='https://adamywfong.github.io/01-horiseon-refactor/'>Horiseon code refactor</a></h3>
+                    <img src="./assets/images/Horiseon.jpeg" alt="Screenshot of Horiseon code refactor webpage">
+                </figure>
+                <figure class="card">
+                    <h3><a href='https://adamywfong.github.io/rock-paper-scissors/'>Rock Paper Scissors</a></h3>
+                    <img src="./assets/images/RPS.png" alt="Screenshot of Rock Paper Scissors">
+                </figure>
+                <figure class="card">
+                    <h3><a href='https://adamywfong.github.io/CSS-Study-Snippets/'>CSS Study Snippets</a></h3>
+                    <img src="./assets/images/CSS-Study-Snippets.png" alt="Screenshot of CSS-Study-Snippets webpage">
+                </figure>
+                <figure class="card">
+                    <h3><a href='#'>Placeholder 1</a></h3>
+                    <img src="./assets/images/placeholder1.png" alt="Placeholder image 1">
+                </figure>
+                <figure class="card">
+                    <h3><a href='#'>Placeholder 2</a></h3>
+                    <img src="./assets/images/placeholder2.png" alt="Placeholder image 2">
+                </figure>
             </article>
         </section>
         <section id="contact-info">
             <h2>Contact Me</h2>
             <ul>
                 <li> <strong>Email:</strong> <a href="mailto:adam.y.w.fong@gmail.com"> adam.y.w.fong@gmail.com</a> </li>
-                <li> <strong> Github: </strong> <a href="https://github.com/adamywfong/"> adamywfong</a> </li>
+                <li> <strong>Github:</strong> <a href="https://github.com/adamywfong/"> adamywfong</a> </li>
             </ul>
         </section>
     </main>
+    <footer>
+        <h6>Made by Adam Fong 2023</h6>
+    </footer>
 </body> 
 </html>
