@@ -1,9 +1,10 @@
 /* color scheme sourced from http://khroma.co/generator/ */
 :root {
-    --french-pass: #b7f5fc;
-    --jade:#01b45d;
-    --mauve:#efcafe;
-    --amethyst: #a457ca;
+    --light-background: #afcafe;
+    --link-color:#cdf6ae;
+    --dark-background:#440ba7;
+    --dark-text: #137a6e;
+    --link-highlight:#f2c3f2;
 }
 
 html {
@@ -17,8 +18,8 @@ body {
      /* set body font size to 16px  */
     font-size: 1.6rem;
     line-height: 1.5;
-    color: var(--amethyst);
-    background-color: var(--french-pass);
+    color: var(--dark-text);
+    background-color: var(--light-background);
 }
 
 h1,
@@ -38,7 +39,7 @@ h2 {
     font-size: 3.5rem;
 }
 h3 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 h4 {
     font-size: 2.5rem;
@@ -55,11 +56,11 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--jade);
+    color: var(--link-color);
 }
 
 a:hover {
-    color: #fff;
+    color: var(--link-highlight);
 }
 
 header {
@@ -69,7 +70,7 @@ header {
     text-align: center;
     display: flex;
     justify-content: space-between;
-    background-color: var(--mauve);
+    background-color: var(--dark-background);
 }
 
 header h1{
@@ -96,67 +97,75 @@ nav a {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 footer {
     width: 100%;
     text-align: center;
-    background-color: var(--mauve);
+    background-color: var(--dark-background);
+    color: var(--dark-background);
 }
 
 .project-cards{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:baseline;
     padding: 1.5rem;
     transition: flex-basis 500ms linear;
     margin:-1.5rem;
     margin-bottom: 1.5rem;   
 }
 
-/* make each code card a flexbox column to align and justify content within it */
-.card {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 20rem;
-    color: var(--jade);
-    background-color: var(--mauve);
-    padding: 10 rem;
-    /* Figure outline */
-    outline: 1px solid var(--amethyst);
-    outline-offset: -1px;
+/* boxes for projects */
+.card, .first-card {
+    color: var(--link-color);
+    background-color: var(--light-background);
     transition: all 0.5s ease-in-out;
     position:relative;
-    
+    /* Figure outline */
+    outline: 2px solid var(--dark-text);
+    outline-offset: -1px;
+
+}
+.card {
+    flex: 0 0 33.333%;
 }
 
-.first {
-    flex:2 1 40rem;
+.first-card {
+    flex:0 0 100%;
 }
 
-.card::after{
+/* Sizing for project images */
+.card::after, .first-card::after{
     content: "";
     display: block;
-    padding:50%;
 }
 
+.card::after {
+    padding:25%;
+}
 
+.first-card::after {
+    padding: 15%;
+}
 
-.card h3 {
+/* Project names appear on bottom left corner and in front of project images */
+.card h3, .first-card h3 {
     position: absolute;
-    bottom: -7px;
+    bottom: -0.5rem;
     left:0;
-    width:95%;
-    padding-left: 16px;
-    padding-bottom: 8px;
+    width:75%;
+    padding-left: 1.6rem;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
     z-index: 1;
-    background-color: var(--amethyst);
+    background-color: var(--dark-background);
 
 }
 
-.card img {
+.card img, .first-card img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -164,22 +173,38 @@ footer {
     object-fit: cover;
 }
 
-.card:hover img {
-    opacity: 1;
+.card:hover img, .first-card:hover img {
+    opacity: 0.9;
+}
+
+.contact a{
+    color: var(--dark-background);
+}
+
+.contact a:hover{
+    color: var(--link-color);
 }
 
 @media screen and (max-width: 992px) {
     /* on tablets, set columns to only be 50% of the width and not grow */
-    .project-cards {
-      flex: 0 0 50%;
-      max-width: 50%;
+    .card {
+      flex-basis: 50%;
     }
 }
   
 /* media query for phone screens */
 @media screen and (max-width: 768px) {
+    /*center instead of aligning to the left*/
     .project-cards {
-      flex: 0 0 100%;
-      max-width: 100%;
+        justify-content: center;
+    }
+
+    .card, .first-card {
+        flex-basis:95%;
+        max-width:95%;
+    }
+
+    .first-card::after {
+        padding: 30%;
     }
 }
