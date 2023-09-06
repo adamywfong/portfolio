@@ -1,3 +1,4 @@
+/*General Styles*/
 /* color scheme sourced from http://khroma.co/generator/ */
 :root {
     --light-background: #afcafe;
@@ -8,12 +9,11 @@
 }
 
 html {
-    /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
+    /* set 1rem to 10px */
     font-size: 62.5%;
 }
 
 body {
-    /* Sans Serif font stack is implemented to help select the best font for each type of computer operating system */
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
      /* set body font size to 16px  */
     font-size: 1.6rem;
@@ -25,8 +25,6 @@ body {
 h1,
 h2,
 h3,
-h4,
-h5,
 h6 {
   margin-bottom: 0.625rem;
   font-weight: 700;
@@ -41,17 +39,12 @@ h2 {
 h3 {
     font-size: 2rem;
 }
-h4 {
-    font-size: 2.5rem;
-}
-h5 {
-    font-size: 2rem;
-}
+
 h6 {
     font-size: 1.5rem;
 }
 p {
-    margin-bottom: 1rem;
+    margin: 1rem;
 }
 
 a {
@@ -63,10 +56,12 @@ a:hover {
     color: var(--link-highlight);
 }
 
+/*Header and Main Navigation elements*/
+
 header {
     width: 100%;
     margin: 0 auto;
-    padding: 2.5rem;
+    padding: 2rem;
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -107,6 +102,13 @@ footer {
     color: var(--dark-background);
 }
 
+/* Center Profile picture */
+.profile {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Work Section formatting */
 .project-cards{
     display: flex;
     flex-direction: row;
@@ -151,6 +153,19 @@ footer {
     padding: 15%;
 }
 
+.card img, .first-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+}
+
+/* On hover effect for image */
+.card:hover img, .first-card:hover img {
+    opacity: 0.9;
+}
+
 /* Project names appear on bottom left corner and in front of project images */
 .card h3, .first-card h3 {
     position: absolute;
@@ -163,18 +178,6 @@ footer {
     z-index: 1;
     background-color: var(--dark-background);
 
-}
-
-.card img, .first-card img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-    object-fit: cover;
-}
-
-.card:hover img, .first-card:hover img {
-    opacity: 0.9;
 }
 
 .contact a{
@@ -207,4 +210,5 @@ footer {
     .first-card::after {
         padding: 30%;
     }
+
 }
